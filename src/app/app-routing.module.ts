@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { ClassListComponent } from './classes/class-list.component';
 import { ProfessorListComponent } from './professors/professor-list.component';
+import { TelaLoginComponent } from './tela-login/tela-login.component';
 
 const routes: Routes = [
   {
@@ -13,9 +14,9 @@ const routes: Routes = [
     component: ProfessorListComponent
   },
   {
-    path: '',
-    redirectTo: '/class-list',
-    pathMatch: 'full'
+    path: 'tela-login',
+    component: TelaLoginComponent
+
   },
   {
     path: '',
