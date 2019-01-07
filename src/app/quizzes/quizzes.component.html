@@ -1,0 +1,50 @@
+<div class="content-wrapper">
+
+  <app-main-component-title title="Quizzes"></app-main-component-title>
+
+  <!-- Main content -->
+  <section class="content">
+
+    <div class="row">
+      <div class="col-md-6">
+
+        <div class="box">
+
+          <div class="box-header with-border">
+            <h3 class="box-title">Lista de Quizzes</h3>
+          </div>
+
+          <div class="box-body with-border">
+            <div class="row">
+              <div class="col-md-12">
+                <table class="table table-bordered">
+                  <tbody>
+                    <tr>
+                      <th style="width: 10px">#</th>
+                      <th>Enunciado</th>
+                      <th>Respostas</th>
+                    </tr>
+                    <tr *ngFor="let quizz of quizzes; index as i">
+                      <td>{{i + 1}}</td>
+                      <td><a href="quizzes/{{quizz.id}}">{{quizz.statement}}</a></td>
+                      <td>0</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-md-12">
+                <a class="btn btn-success pull-right" href="/quizzes/create">Novo Quizz</a>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+</div>

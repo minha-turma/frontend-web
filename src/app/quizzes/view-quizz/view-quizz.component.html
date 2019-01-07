@@ -1,0 +1,65 @@
+<div class="content-wrapper">
+
+    <app-main-component-title title="Criar novo Quizz"></app-main-component-title>
+  
+    <!-- Main content -->
+    <section class="content">
+
+      <div class="row">
+        <div class="col-md-12">
+
+          <div class="box">
+            <div class="box-header with-borders">Novo Quizz</div>
+            <div class="box-body">
+
+              <div class="row form-group" *ngIf="quizz">
+                <div class="col-md-12 statement">
+                    <p>Enunciado</p>
+                    <textarea class="form-control" rows=3 placeholder="Digite o enunciado da questão" [(ngModel)]="quizz.statement"></textarea>
+                </div>
+              
+                <div class="col-md-6">
+                    <p>Alternativa A</p>
+                    <textarea class="statement form-control" [(ngModel)]="quizz.alternatives[0]" 
+                              placeholder="Digite o texto da alternativa A" >
+                    </textarea>
+                </div>
+                <div class="col-md-6">
+                    <p>Alternativa B</p>
+                    <textarea class="statement form-control" [(ngModel)]="quizz.alternatives[1]" 
+                              placeholder="Digite o texto da alternativa B" >
+                    </textarea>
+                </div>
+                <div class="col-md-6">
+                    <p>Alternativa C</p>
+                    <textarea class="statement form-control" [(ngModel)]="quizz.alternatives[2]" 
+                              placeholder="Digite o texto da alternativa C" >
+                    </textarea>
+                </div>
+                <div class="col-md-6">
+                    <p>Alternativa D</p>
+                    <textarea class="statement form-control" [(ngModel)]="quizz.alternatives[3]" 
+                              placeholder="Digite o texto da alternativa D" >
+                    </textarea>
+                </div>
+                <div class="col-md-6">
+                    <p>Alternativa E</p>
+                    <textarea class="statement form-control" [(ngModel)]="quizz.alternatives[4]" 
+                              placeholder="Digite o texto da alternativa E" >
+                    </textarea>
+                </div>
+              </div>
+
+              <div class="row">
+                  <div class="col-md-12">
+                      <button class="btn btn-success pull-right" (click)="saveQuizz()">Salvar</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+        </div>
+      </div>
+
+    </section>
+  
+  </div>
