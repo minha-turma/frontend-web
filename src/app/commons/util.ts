@@ -1,3 +1,5 @@
+import { Router } from '@angular/router';
+
 export function getStringProperty(property: string, obj: any): string {
     return obj ? (obj[property] || '') : '';
 }
@@ -15,4 +17,8 @@ export function isEmpty(property: any) {
     }
 
     return false;
+}
+
+export function isLoginPage(router: Router): boolean {
+    return router.url === '/login';
 }

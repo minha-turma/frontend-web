@@ -15,6 +15,8 @@ import { MainComponentTitleComponent } from './commons/main-component-title/main
 import { QuizzesComponent } from './quizzes/quizzes.component';
 import { CreateQuizzComponent } from './quizzes/create-quizz/create-quizz.component';
 import { ViewQuizzComponent } from './quizzes/view-quizz/view-quizz.component';
+import { Interceptor } from './commons/service/interceptor.module';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   declarations: [
@@ -27,13 +29,15 @@ import { ViewQuizzComponent } from './quizzes/view-quizz/view-quizz.component';
     MainComponentTitleComponent,
     QuizzesComponent,
     CreateQuizzComponent,
-    ViewQuizzComponent
+    ViewQuizzComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    Interceptor
   ],
   providers: [],
   bootstrap: [AppComponent]

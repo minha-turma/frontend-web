@@ -10,7 +10,7 @@ import { Observable } from 'rxjs';
 })
 export class QuizzService extends BaseService<Quizz> {
 
-  resource = 'quizz';
+  resource = 'quiz';
 
   constructor(public http: HttpClient) {
     super(http);

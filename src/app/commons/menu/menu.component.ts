@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { isLoginPage } from '../util';
 
 interface MenuItem {
   name: string;
@@ -82,8 +83,14 @@ export class MenuComponent implements OnInit {
   adjustHeight() {
     setTimeout(function() {
       const height = document.getElementsByTagName('body')[0].offsetHeight + 'px';
-      document.getElementsByTagName('aside')[0].style.minHeight = height;
+      if (document.getElementsByTagName('aside')[0]) {
+        document.getElementsByTagName('aside')[0].style.minHeight = height;
+      }
     }, 100);
+  }
+
+  get display(): boolean {
+    return !isLoginPage(this.router);
   }
 
 }

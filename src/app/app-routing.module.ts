@@ -5,8 +5,13 @@ import { ProfessorListComponent } from './professors/professor-list.component';
 import { QuizzesComponent } from './quizzes/quizzes.component';
 import { CreateQuizzComponent } from './quizzes/create-quizz/create-quizz.component';
 import { ViewQuizzComponent } from './quizzes/view-quizz/view-quizz.component';
+import { LoginComponent } from './login/login.component';
 
 const routes: Routes = [
+  {
+    path: 'login',
+    component: LoginComponent
+  },
   {
     path: 'class-list',
     component: ClassListComponent
@@ -29,12 +34,7 @@ const routes: Routes = [
   },
   {
     path: '',
-    redirectTo: '/class-list',
-    pathMatch: 'full'
-  },
-  {
-    path: '',
-    redirectTo: '/class-list',
+    redirectTo: '/login',
     pathMatch: 'full'
   }
 ];
