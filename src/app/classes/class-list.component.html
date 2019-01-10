@@ -226,8 +226,20 @@
         </div>
 
       </div>
-      <div class="box-footer"></div>
+      <div class="box-footer">
+          <div>
+              <label for="files" class="btn btn-success pull-right">Importar Alunos</label>
 
+              <input type="file" 
+                     id="files" 
+                     style="visibility:hidden;" 
+                     class="btn btn-success" 
+                     (change)="onFileChange($event)" 
+                     multiple="false" 
+                     name="Importar Alunos">
+            </div>
+        
+      </div>
     </div>
 
   </section>

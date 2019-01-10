@@ -17,7 +17,6 @@ import { CreateQuizzComponent } from './quizzes/create-quizz/create-quizz.compon
 import { ViewQuizzComponent } from './quizzes/view-quizz/view-quizz.component';
 import { Interceptor } from './commons/service/interceptor.module';
 import { LoginComponent } from './login/login.component';
-import { StudentsComponent } from './students/students.component';
 
 @NgModule({
   declarations: [
@@ -31,8 +30,7 @@ import { StudentsComponent } from './students/students.component';
     QuizzesComponent,
     CreateQuizzComponent,
     ViewQuizzComponent,
-    LoginComponent,
-    StudentsComponent
+    LoginComponent
   ],
   imports: [
     BrowserModule,
