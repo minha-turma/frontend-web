@@ -9,13 +9,15 @@ export class User extends Entity {
     username: String;
     password: String;
     schoolClass: SchoolClass;
+    authorities: string[];
 
     constructor(data?) {
         super(data);
         this.name = getStringProperty('name', data);
         this.username = getStringProperty('username', data);
         this.password = getStringProperty('password', data);
-        this.schoolClass = data['schoolClass'];
+        this.schoolClass = new SchoolClass(data['schoolClass']);
+        this.authorities = data.authorities;
     }
 
     validate(): boolean {

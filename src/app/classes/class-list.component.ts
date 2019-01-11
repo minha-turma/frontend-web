@@ -4,6 +4,11 @@ import { User } from '../users/user';
 import { UserService } from '../users/user.service';
 import { SchoolClass } from './school-class';
 
+interface Group {
+  name: string;
+  students: User[];
+}
+
 @Component({
   selector: 'app-class-list',
   templateUrl: './class-list.component.html',
@@ -12,10 +17,29 @@ import { SchoolClass } from './school-class';
 export class ClassListComponent implements OnInit {
 
   data: any[];
+  groups: Group[] = [];
 
   constructor(public userService: UserService) { }
 
   ngOnInit() {
+    this.loadUsers();
+  }
+
+  loadUsers() {
+    this.userService.list().subscribe(users => {
+      users.forEach(user => {
+        const schoolClass = user.schoolClass;
+        const group = this.groups.find(g => g.name === schoolClass.name);
+        if (group === undefined && schoolClass.validate()) {
+          this.groups.push({ name: schoolClass.name, students: []});
+        }
+        if (schoolClass.validate()) {
+          this.groups.find(g => g.name === schoolClass.name).students.push(user);
+        }
+      });
+    });
+
+    console.log(this.groups);
   }
 
   onFileChange(evt: any) {
@@ -47,11 +71,12 @@ export class ClassListComponent implements OnInit {
           name: row[0],
           username: row[1],
           password: row[2],
-          schoolClass: new SchoolClass({ name: row[3] })});
+          schoolClass: new SchoolClass({ name: row[3] }),
+          authorities: ['ROLE_STUDENT']});
       });
 
       this.userService.addAll(users).subscribe(addedUsers => {
-        console.log(addedUsers);
+        this.loadUsers();
       });
     };
 

@@ -74,9 +74,9 @@
         <div class="row">
           <div class="col-md-12">
 
-            <div class="box box-success direct-chat direct-chat-success">
+            <div class="box box-success direct-chat direct-chat-success" *ngFor="let group of groups">
               <div class="box-header with-border">
-                <h3 class="box-title">1º Ano Ensino Médio</h3>
+                <h3 class="box-title">{{ group.name }}</h3>
 
                 <div class="box-tools pull-right">
                   <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
@@ -94,47 +94,15 @@
                               <th style="width: 10px">#</th>
                               <th>Nome do Aluno</th>
                               <th>Presença</th>
-                              <th style="width: 40px">Porcentagem</th>
+                              <th style="width: 40px">Sentimentos</th>
                             </tr>
-                            <tr>
-                              <td>1</td>
-                              <td><a>Pedro Lucas de Lima</a></td>
-                              <td>
-                                <div class="progress progress-xs">
-                                  <div class="progress-bar progress-bar-danger" style="width: 55%"></div>
-                                </div>
+                            <tr *ngFor="let user of group.students; index as i">
+                              <td>{{ i }}</td>
+                              <td style="width: 60%"><a>{{ user.name }}</a></td>
+                              <td style="width: 15%">
+                                <span class="badge bg-success">55%</span>
                               </td>
-                              <td><span class="badge bg-red">55%</span></td>
-                            </tr>
-                            <tr>
-                              <td>2</td>
-                              <td><a>João Fenandes dos Anjos</a></td>
-                              <td>
-                                <div class="progress progress-xs">
-                                  <div class="progress-bar progress-bar-yellow" style="width: 70%"></div>
-                                </div>
-                              </td>
-                              <td><span class="badge bg-yellow">70%</span></td>
-                            </tr>
-                            <tr>
-                              <td>3</td>
-                              <td><a>Maria Gabriela Santos</a></td>
-                              <td>
-                                <div class="progress progress-xs progress-striped active">
-                                  <div class="progress-bar progress-bar-primary" style="width: 30%"></div>
-                                </div>
-                              </td>
-                              <td><span class="badge bg-light-blue">30%</span></td>
-                            </tr>
-                            <tr>
-                              <td>4</td>
-                              <td><a>Ana Pereira de Souza</a></td>
-                              <td>
-                                <div class="progress progress-xs progress-striped active">
-                                  <div class="progress-bar progress-bar-success" style="width: 90%"></div>
-                                </div>
-                              </td>
-                              <td><span class="badge bg-green">90%</span></td>
+                              <td style="width: 15%"><span class="badge bg-red">55%</span></td>
                             </tr>
                           </tbody>
                         </table>
@@ -144,84 +112,7 @@
 
               </div>
               <!-- /.box-body -->
-
             </div>
-
-
-
-            <div class="box box-success direct-chat direct-chat-success">
-                <div class="box-header with-border">
-                  <h3 class="box-title">2º Ano Ensino Médio</h3>
-
-                  <div class="box-tools pull-right">
-                    <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
-                    </button>
-                  </div>
-                </div>
-                <!-- /.box-header -->
-                <div class="box-body">
-
-                  <div class="row">
-                    <div class="col-md-12">
-                        <table class="table table-bordered">
-                            <tbody>
-                              <tr>
-                                <th style="width: 10px">#</th>
-                                <th>Nome do Aluno</th>
-                                <th>Presença</th>
-                                <th style="width: 40px">Porcentagem</th>
-                              </tr>
-                              <tr>
-                                <td>1</td>
-                                <td><a>Pedro Lucas de Lima</a></td>
-                                <td>
-                                  <div class="progress progress-xs">
-                                    <div class="progress-bar progress-bar-danger" style="width: 55%"></div>
-                                  </div>
-                                </td>
-                                <td><span class="badge bg-red">55%</span></td>
-                              </tr>
-                              <tr>
-                                <td>2</td>
-                                <td><a>João Fenandes dos Anjos</a></td>
-                                <td>
-                                  <div class="progress progress-xs">
-                                    <div class="progress-bar progress-bar-yellow" style="width: 70%"></div>
-                                  </div>
-                                </td>
-                                <td><span class="badge bg-yellow">70%</span></td>
-                              </tr>
-                              <tr>
-                                <td>3</td>
-                                <td><a>Maria Gabriela Santos</a></td>
-                                <td>
-                                  <div class="progress progress-xs progress-striped active">
-                                    <div class="progress-bar progress-bar-primary" style="width: 30%"></div>
-                                  </div>
-                                </td>
-                                <td><span class="badge bg-light-blue">30%</span></td>
-                              </tr>
-                              <tr>
-                                <td>4</td>
-                                <td><a>Ana Pereira de Souza</a></td>
-                                <td>
-                                  <div class="progress progress-xs progress-striped active">
-                                    <div class="progress-bar progress-bar-success" style="width: 90%"></div>
-                                  </div>
-                                </td>
-                                <td><span class="badge bg-green">90%</span></td>
-                              </tr>
-                            </tbody>
-                          </table>
-                      <!-- /.box -->
-                    </div>
-                  </div>
-
-                </div>
-                <!-- /.box-body -->
-
-              </div>
-
           </div>
         </div>
 
