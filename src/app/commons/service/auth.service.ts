@@ -1,15 +1,11 @@
 import { Injectable } from '@angular/core';
-import { HttpClientModule, HttpClient } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { Entity } from '../model/Entity';
 import { tap, map } from 'rxjs/operators';
 import { Router } from '@angular/router';
 
-const API_URL = 'http://localhost:8080/api';
+const API_URL = '/api';
 
-function RESOURCE_ID_URL(resource: string, id: string) {
-    return `${API_URL}/${resource}/${id}`;
-}
 function RESOURCE_URL(resource: string) {
     return `${API_URL}/${resource}`;
 }
@@ -32,6 +28,13 @@ export class AuthService {
             }),
             map(() => true)
         );
+    }
+
+    public isLoggedId(): Boolean {
+        if (!localStorage.getItem('access_token')) {
+            return false;
+        }
+        return true;
     }
 
     public logout() {

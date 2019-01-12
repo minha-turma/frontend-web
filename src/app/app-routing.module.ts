@@ -34,8 +34,15 @@ const routes: Routes = [
   },
   {
     path: '',
-    redirectTo: '/login',
+    redirectTo: '/class-list',
     pathMatch: 'full'
+  },
+  {
+    path: '404',
+    component: ClassListComponent
+  },
+  { path: '**',
+    redirectTo: '/class-list'
   }
 ];
 
