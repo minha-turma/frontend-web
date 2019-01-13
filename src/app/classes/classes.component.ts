@@ -10,9 +10,9 @@ interface Group {
 }
 
 @Component({
-  selector: 'app-class-list',
-  templateUrl: './class-list.component.html',
-  styleUrls: ['./class-list.component.scss']
+  selector: 'app-classes',
+  templateUrl: './classes.component.html',
+  styleUrls: ['./classes.component.scss']
 })
 export class ClassListComponent implements OnInit {
 
@@ -26,7 +26,7 @@ export class ClassListComponent implements OnInit {
   }
 
   loadUsers() {
-    this.userService.list().subscribe(users => {
+    this.userService.listStudents().subscribe(users => {
       users.forEach(user => {
         const schoolClass = user.schoolClass;
         const group = this.groups.find(g => g.name === schoolClass.name);
@@ -81,6 +81,19 @@ export class ClassListComponent implements OnInit {
     };
 
     reader.readAsBinaryString(target.files[0]);
+  }
+
+  getFeelingImage(user: User) {
+    switch (user.feeling) {
+      case 'Happy':
+        return 'happy.png';
+      case 'Unhappy':
+        return 'unhappy.png';
+      case 'Mad':
+        return 'mad.png';
+      case 'Confused':
+        return 'confused.png';
+    }
   }
 
 }

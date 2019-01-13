@@ -27,6 +27,11 @@ export class UserService extends BaseService<User> {
       map(list => list.map(item => new User(item))));
   }
 
+  listStudents(): Observable<User[]> {
+    return this.http.get<User[]>(this.RESOURCE_URL(this.resource) + '/student').pipe(
+      map(list => list.map(item => new User(item))));
+  }
+
   add(user: User): Observable<User> {
     return this.addEntity(user).pipe(map(data => {
       return new User(data);

@@ -20,33 +20,28 @@ export class MenuComponent implements OnInit {
   options: MenuItem[] = [
     {
       name: 'Turmas',
-      path: '/class-list',
+      path: '/classes',
       icon: 'fa fa-group'
     },
     {
-      name: 'Professores',
-      path: '/professor-list',
+      name: 'Aulas',
+      path: '/lectures',
       icon: 'fa fa-mortar-board'
-    },
-    {
-      name: 'Presenças',
-      path: '/presences',
-      icon: 'fa fa-check-square'
     },
     {
       name: 'Quizzes',
       path: '/quizzes',
-      icon: 'fa fa-list-alt'
+      icon: 'fa fa-check'
+    },
+    {
+      name: 'Disciplinas',
+      path: '/subjects',
+      icon: 'fa fa-cube'
     },
     {
       name: 'Auto didatismo',
       path: '/self-learning',
       icon: 'fa fa-rocket'
-    },
-    {
-      name: 'Sentiments',
-      path: '/feelings',
-      icon: 'fa fa-heart'
     },
     {
       name: 'Auto confiança',

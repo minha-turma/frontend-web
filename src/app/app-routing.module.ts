@@ -1,11 +1,13 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { ClassListComponent } from './classes/class-list.component';
+import { ClassListComponent } from './classes/classes.component';
 import { ProfessorListComponent } from './professors/professor-list.component';
 import { QuizzesComponent } from './quizzes/quizzes.component';
 import { CreateQuizzComponent } from './quizzes/create-quizz/create-quizz.component';
 import { ViewQuizzComponent } from './quizzes/view-quizz/view-quizz.component';
 import { LoginComponent } from './login/login.component';
+import { SubjectsComponent } from './subjects/subjects.component';
+import { LecturesComponent } from './lectures/lectures.component';
 
 const routes: Routes = [
   {
@@ -13,12 +15,16 @@ const routes: Routes = [
     component: LoginComponent
   },
   {
-    path: 'class-list',
+    path: 'classes',
     component: ClassListComponent
   },
   {
-    path: 'professor-list',
-    component: ProfessorListComponent
+    path: 'lectures',
+    component: LecturesComponent
+  },
+  {
+    path: 'subjects',
+    component: SubjectsComponent
   },
   {
     path: 'quizzes',
@@ -34,7 +40,7 @@ const routes: Routes = [
   },
   {
     path: '',
-    redirectTo: '/class-list',
+    redirectTo: '/classes',
     pathMatch: 'full'
   },
   {
@@ -42,7 +48,7 @@ const routes: Routes = [
     component: ClassListComponent
   },
   { path: '**',
-    redirectTo: '/class-list'
+    redirectTo: '/classes'
   }
 ];
 

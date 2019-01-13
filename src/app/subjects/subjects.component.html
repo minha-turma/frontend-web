@@ -1,0 +1,54 @@
+<div class="content-wrapper">
+
+  <app-main-component-title title="Disciplinas"></app-main-component-title>
+
+  <!-- Main content -->
+  <section class="content">
+
+    <div class="row">
+      <div class="col-md-6">
+
+        <div class="box">
+
+          <div class="box-header with-border">
+            <h3 class="box-title">Lista de Disciplinas</h3>
+          </div>
+
+          <div class="box-body with-border">
+            <div class="row">
+              <div class="col-md-12">
+                <table class="table table-bordered" *ngIf="hasSubjects">
+                  <tbody>
+                    <tr>
+                      <th style="width: 10px">#</th>
+                      <th>Nome</th>
+                    </tr>
+                    <tr *ngFor="let subject of subjects; index as i">
+                      <td>{{i + 1}}</td>
+                      <td><span>{{subject.name}}</span></td>
+                    </tr>
+                  </tbody>
+                </table>
+                <p *ngIf="!hasSubjects">Nenhuma disiciplina cadastrada no momento</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="box-footer form-group">
+            <div class="row">
+              <div class="col-md-8">
+                  <input type="text" placeholder="Nova disciplina" [(ngModel)]="newSubjectName" class="form-control">
+              </div>
+              <div class="col-md-4">
+                  <a class="btn btn-success pull-right" (click)="addSubject()">Adicionar Disciplinas</a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+</div>

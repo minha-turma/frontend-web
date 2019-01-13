@@ -17,14 +17,14 @@ export class LoginComponent implements OnInit {
 
   ngOnInit() {
     if (this.authService.isLoggedId()) {
-      this.router.navigate(['class-list']);
+      this.router.navigate(['classes']);
     }
   }
 
   login() {
     this.authService.login(this.username, this.password).subscribe(result => {
       if (result) {
-        this.router.navigate(['class-list']);
+        this.router.navigate(['classes']);
       }
     });
   }

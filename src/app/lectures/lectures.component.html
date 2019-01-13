@@ -1,0 +1,86 @@
+<div class="content-wrapper">
+
+    <app-main-component-title title="Disciplinas"></app-main-component-title>
+  
+    <!-- Main content -->
+    <section class="content">
+  
+      <div class="row">
+        <div class="col-md-6">
+  
+          <div class="box">
+  
+            <div class="box-header with-border">
+              <h3 class="box-title">Lista de Aulas</h3>
+            </div>
+  
+            <div class="box-body with-border">
+              <div class="row">
+                <div class="col-md-12">
+                  <table class="table table-bordered" *ngIf="hasLectures">
+                    <tbody>
+                      <tr>
+                        <th width="10%">#</th>
+                        <th>Data</th>
+                        <th>Turma</th>
+                        <th>Disciplina</th>
+                      </tr>
+                      <tr *ngFor="let lecture of lectures; index as i">
+                        <td>{{i + 1}}</td>
+                        <td><a href="#">{{ lecture.date | date}}</a></td>
+                        <td><a href="#">{{lecture.schoolClass.name}}</a></td>
+                        <td><span>{{lecture.subject.name}}</span></td>
+                      </tr>
+                    </tbody>
+                  </table>
+                  <p *ngIf="!hasLectures">Nenhuma aula cadastrada no momento</p>
+                </div>
+              </div>
+            </div>
+  
+            <div class="box-footer form-group">
+              <div class="row">
+                <div class="col-md-12">
+                    <button type="button" class="btn btn-success" data-toggle="modal" data-target="#modal-default">
+                        Adicionar Disciplinas
+                      </button>
+                </div>
+              </div>
+            </div>
+  
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+
+  <div class="modal fade" id="modal-default">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">×</span></button>
+            <h4 class="modal-title">Adicionar Nova Aula</h4>
+          </div>
+          <div class="modal-body form-group">
+            <label>Data da aula</label>
+            <p class="form-control">20/20/2019</p>
+            <label>Turma</label>
+            <select class="form-control" [(ngModel)]="schoolClass">
+                <option *ngFor="let schoolClass of schoolClasses" [ngValue]="schoolClass"> {{ schoolClass.name }}</option>
+              </select>
+            <label>Disciplina</label>
+            <select class="form-control" [(ngModel)]="subject">
+                <option *ngFor="let subject of subjects" [ngValue]="subject"> {{ subject.name }}</option>
+              </select>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Cancelar</button>
+            <button type="button" (click)="addLecture()" data-dismiss="modal" class="btn btn-primary">Adicionar</button>
+          </div>
+        </div>
+        <!-- /.modal-content -->
+      </div>
+      <!-- /.modal-dialog -->
+    </div>

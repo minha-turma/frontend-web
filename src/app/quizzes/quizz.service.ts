@@ -27,14 +27,14 @@ export class QuizzService extends BaseService<Quizz> {
       map(list => list.map(item => new Quizz(item))));
   }
 
-  add(tool: Quizz): Observable<Quizz> {
-    return this.addEntity(tool).pipe(map(data => {
+  add(quiz: Quizz): Observable<Quizz> {
+    return this.addEntity(quiz).pipe(map(data => {
       return new Quizz(data);
     }));
   }
 
-  update(tool: Quizz): Observable<Quizz> {
-    return this.updateEntity(tool).pipe(map(data => {
+  update(quiz: Quizz): Observable<Quizz> {
+    return this.updateEntity(quiz).pipe(map(data => {
       return new Quizz(data);
     }));
   }

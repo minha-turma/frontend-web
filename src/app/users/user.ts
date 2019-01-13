@@ -10,6 +10,7 @@ export class User extends Entity {
     password: String;
     schoolClass: SchoolClass;
     authorities: string[];
+    feeling: string;
 
     constructor(data?) {
         super(data);
@@ -18,6 +19,7 @@ export class User extends Entity {
         this.password = getStringProperty('password', data);
         this.schoolClass = new SchoolClass(data['schoolClass']);
         this.authorities = data.authorities;
+        this.feeling = data.feeling;
     }
 
     validate(): boolean {

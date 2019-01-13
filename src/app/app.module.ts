@@ -6,7 +6,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
-import { ClassListComponent } from './classes/class-list.component';
+import { ClassListComponent } from './classes/classes.component';
 import { HeaderComponent } from './commons/header/header.component';
 import { FooterComponent } from './commons/footer/footer.component';
 import { MenuComponent } from './commons/menu/menu.component';
@@ -17,6 +17,8 @@ import { CreateQuizzComponent } from './quizzes/create-quizz/create-quizz.compon
 import { ViewQuizzComponent } from './quizzes/view-quizz/view-quizz.component';
 import { Interceptor } from './commons/service/interceptor.module';
 import { LoginComponent } from './login/login.component';
+import { LecturesComponent } from './lectures/lectures.component';
+import { SubjectsComponent } from './subjects/subjects.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +32,9 @@ import { LoginComponent } from './login/login.component';
     QuizzesComponent,
     CreateQuizzComponent,
     ViewQuizzComponent,
-    LoginComponent
+    LoginComponent,
+    LecturesComponent,
+    SubjectsComponent
   ],
   imports: [
     BrowserModule,

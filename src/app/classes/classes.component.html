@@ -94,7 +94,7 @@
                               <th style="width: 10px">#</th>
                               <th>Nome do Aluno</th>
                               <th>Presença</th>
-                              <th style="width: 40px">Sentimentos</th>
+                              <th style="width: 40px">Sentimento</th>
                             </tr>
                             <tr *ngFor="let user of group.students; index as i">
                               <td>{{ i }}</td>
@@ -102,7 +102,9 @@
                               <td style="width: 15%">
                                 <span class="badge bg-success">55%</span>
                               </td>
-                              <td style="width: 15%"><span class="badge bg-red">55%</span></td>
+                              <td style="width: 15%">
+                                <img src="assets/{{ getFeelingImage(user) }}" width="30px">
+                              </td>
                             </tr>
                           </tbody>
                         </table>
