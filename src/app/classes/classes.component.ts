@@ -3,6 +3,9 @@ import * as XLSX from 'xlsx';
 import { User } from '../users/user';
 import { UserService } from '../users/user.service';
 import { SchoolClass } from './school-class';
+import { SchoolClassService } from './schoolClass.service';
+import { QuizzService } from '../quizzes/quizz.service';
+import { PresenceService } from '../presences/lecture.service';
 
 interface Group {
   name: string;
@@ -19,10 +22,19 @@ export class ClassListComponent implements OnInit {
   data: any[];
   groups: Group[] = [];
 
-  constructor(public userService: UserService) { }
+  studentsCount = 0;
+  schoolClassCount = 0;
+  presenceAvg = 0;
+  quizzesCount = 0;
+
+  constructor(public userService: UserService,
+              public schoolClassService: SchoolClassService,
+              public quizService: QuizzService,
+              public presenceService: PresenceService) { }
 
   ngOnInit() {
     this.loadUsers();
+    this.loadCount();
   }
 
   loadUsers() {
@@ -40,6 +52,21 @@ export class ClassListComponent implements OnInit {
     });
 
     console.log(this.groups);
+  }
+
+  loadCount() {
+    this.userService.count().subscribe(count => {
+      this.studentsCount = count;
+    });
+    this.quizService.count().subscribe(count => {
+      this.quizzesCount = count;
+    });
+    this.schoolClassService.count().subscribe(count => {
+      this.schoolClassCount = count;
+    });
+    this.presenceService.average().subscribe(avg => {
+      this.presenceAvg = avg;
+    });
   }
 
   onFileChange(evt: any) {

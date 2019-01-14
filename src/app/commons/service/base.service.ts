@@ -37,6 +37,10 @@ export abstract class BaseService<T extends Entity> {
     return this.http.delete<T>(this.RESOURCE_ID_URL(this.resource, String(id)));
   }
 
+  public count(): Observable<number> {
+    return this.http.get<number>(this.RESOURCE_URL(this.resource) + '/count');
+  }
+
   protected RESOURCE_ID_URL(resource: string, id: string) {
     return `${API_URL}/${resource}/${id}`;
   }
