@@ -42,7 +42,7 @@
               <div class="row">
                 <div class="col-md-12">
                     <button type="button" class="btn btn-success" data-toggle="modal" data-target="#modal-default">
-                        Adicionar Disciplinas
+                        Adicionar Aula
                       </button>
                 </div>
               </div>
@@ -65,11 +65,13 @@
           </div>
           <div class="modal-body form-group">
             <label>Data da aula</label>
-            <p class="form-control">20/20/2019</p>
+            <input type="date" class="form-control" [(ngModel)]="date">
+
             <label>Turma</label>
             <select class="form-control" [(ngModel)]="schoolClass">
                 <option *ngFor="let schoolClass of schoolClasses" [ngValue]="schoolClass"> {{ schoolClass.name }}</option>
-              </select>
+            </select>
+
             <label>Disciplina</label>
             <select class="form-control" [(ngModel)]="subject">
                 <option *ngFor="let subject of subjects" [ngValue]="subject"> {{ subject.name }}</option>

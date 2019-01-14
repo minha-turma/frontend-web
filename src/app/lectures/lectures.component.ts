@@ -20,12 +20,14 @@ export class LecturesComponent implements OnInit {
   newLecture: Lecture;
   subject: Subject;
   schoolClass: SchoolClass;
+  date: Date;
 
   constructor(public lectureService: LectureService,
               public subjectService: SubjectService,
               public schoolClassService: SchoolClassService) { }
 
   ngOnInit() {
+
     this.lectureService.list().subscribe(lectures => {
       this.lectures = lectures;
     });
@@ -38,8 +40,9 @@ export class LecturesComponent implements OnInit {
   }
 
   addLecture() {
+    const doo = new Date(this.date);
     this.lectureService.add(new Lecture({
-      date: new Date(), subject: this.subject, schoolClass: this.schoolClass
+      date: new Date( doo.getTime() - doo.getTimezoneOffset() * -60000 ), subject: this.subject, schoolClass: this.schoolClass
      })).subscribe(lecture => {
       this.lectures.push(lecture);
     });

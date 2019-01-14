@@ -100,7 +100,7 @@
                               <td>{{ i }}</td>
                               <td style="width: 60%"><a>{{ user.name }}</a></td>
                               <td style="width: 15%">
-                                <span class="badge bg-success">55%</span>
+                                <span class="badge bg-{{ getColor(user.presence) }}">{{ user.presence.toFixed(2) }}%</span>
                               </td>
                               <td style="width: 15%">
                                 <img src="assets/{{ getFeelingImage(user) }}" width="30px">

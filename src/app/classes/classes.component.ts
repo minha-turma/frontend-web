@@ -96,4 +96,14 @@ export class ClassListComponent implements OnInit {
     }
   }
 
+  getColor(rate: number): string {
+    if (rate <= 30) {
+      return 'red';
+    } else if (rate > 30 && rate < 70) {
+      return 'yellow';
+    } else {
+      return 'green';
+    }
+  }
+
 }

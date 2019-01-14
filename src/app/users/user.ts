@@ -11,6 +11,7 @@ export class User extends Entity {
     schoolClass: SchoolClass;
     authorities: string[];
     feeling: string;
+    presence: number;
 
     constructor(data?) {
         super(data);
@@ -20,6 +21,7 @@ export class User extends Entity {
         this.schoolClass = new SchoolClass(data['schoolClass']);
         this.authorities = data.authorities;
         this.feeling = data.feeling;
+        this.presence = data.presence;
     }
 
     validate(): boolean {
