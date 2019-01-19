@@ -4,7 +4,7 @@ import { Observable } from 'rxjs';
 import { tap, map } from 'rxjs/operators';
 import { Router } from '@angular/router';
 
-const API_URL = 'https://minha-turma.herokuapp.com/api';
+const API_URL = '/api';
 
 function RESOURCE_URL(resource: string) {
     return `${API_URL}/${resource}`;
