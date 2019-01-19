@@ -5,7 +5,7 @@ import { UserService } from '../users/user.service';
 import { SchoolClass } from './school-class';
 import { SchoolClassService } from './schoolClass.service';
 import { QuizzService } from '../quizzes/quizz.service';
-import { PresenceService } from '../presences/lecture.service';
+import { PresenceService } from '../presences/presence.service';
 
 interface Group {
   name: string;

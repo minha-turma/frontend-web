@@ -34,6 +34,11 @@ export class MenuComponent implements OnInit {
       icon: 'fa fa-check'
     },
     {
+      name: 'Mensagens',
+      path: '/messages',
+      icon: 'fa fa-envelope'
+    },
+    {
       name: 'Disciplinas',
       path: '/subjects',
       icon: 'fa fa-cube'

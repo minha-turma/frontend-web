@@ -8,6 +8,7 @@ import { ViewQuizzComponent } from './quizzes/view-quizz/view-quizz.component';
 import { LoginComponent } from './login/login.component';
 import { SubjectsComponent } from './subjects/subjects.component';
 import { LecturesComponent } from './lectures/lectures.component';
+import { MessagesComponent } from './messages/messages.component';
 
 const routes: Routes = [
   {
@@ -29,6 +30,10 @@ const routes: Routes = [
   {
     path: 'quizzes',
     component: QuizzesComponent
+  },
+  {
+    path: 'messages',
+    component: MessagesComponent
   },
   {
     path: 'quizzes/create',

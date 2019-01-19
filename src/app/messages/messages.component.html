@@ -1,0 +1,82 @@
+<div class="content-wrapper">
+
+  <app-main-component-title title="Mensagens"></app-main-component-title>
+
+  <!-- Main content -->
+  <section class="content">
+
+    <div class="row">
+      <div class="col-md-6">
+
+        <div class="box">
+
+          <div class="box-header with-border">
+            <h3 class="box-title">Lista de Mensagens</h3>
+          </div>
+
+          <div class="box-body with-border">
+            <div class="row">
+              <div class="col-md-12">
+                <table class="table table-bordered">
+                  <tbody>
+                    <tr>
+                      <th style="width: 10px">#</th>
+                      <th>Assunto</th>
+                      <th>Conteúdo</th>
+                      <th>Turma</th>
+                    </tr>
+                    <tr *ngFor="let message of messages; index as i">
+                      <td>{{i + 1}}</td>
+                      <td><a href="messages/{{message.id}}">{{message.subject}}</a></td>
+                      <td>{{message.content}}</td>
+                      <td>{{message.schoolClass.name}}</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-md-12">
+                <a class="btn btn-success pull-right" data-toggle="modal" data-target="#modal-default-message">Nova Menssagem</a>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+</div>
+
+<div class="modal fade" id="modal-default-message">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">×</span></button>
+        <h4 class="modal-title">Adicionar Nova Mensagem</h4>
+      </div>
+      <div class="modal-body form-group">
+        <label>Assunto</label>
+        <input type="text" class="form-control" placeholder="Assunto da mensagem" [(ngModel)]="subject">
+
+        <label>Conteúdo</label>
+        <textarea class="form-control" placeholder="Conteúdo da mensagem" [(ngModel)]="content"></textarea>
+
+        <label>Turma</label>
+        <select class="form-control" [(ngModel)]="schoolClass">
+            <option *ngFor="let schoolClass of schoolClasses" [ngValue]="schoolClass"> {{ schoolClass.name }}</option>
+        </select>
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Cancelar</button>
+        <button type="button" (click)="addMessage()" data-dismiss="modal" class="btn btn-primary">Adicionar</button>
+      </div>
+    </div>
+    <!-- /.modal-content -->
+  </div>
+  <!-- /.modal-dialog -->
+</div>

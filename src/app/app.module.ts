@@ -19,6 +19,7 @@ import { Interceptor } from './commons/service/interceptor.module';
 import { LoginComponent } from './login/login.component';
 import { LecturesComponent } from './lectures/lectures.component';
 import { SubjectsComponent } from './subjects/subjects.component';
+import { MessagesComponent } from './messages/messages.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { SubjectsComponent } from './subjects/subjects.component';
     ViewQuizzComponent,
     LoginComponent,
     LecturesComponent,
-    SubjectsComponent
+    SubjectsComponent,
+    MessagesComponent
   ],
   imports: [
     BrowserModule,
