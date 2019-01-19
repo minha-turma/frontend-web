@@ -133,4 +133,8 @@ export class ClassListComponent implements OnInit {
     }
   }
 
+  public get hasStudents(): boolean {
+    return this.groups.length > 0;
+  }
+
 }

@@ -46,4 +46,8 @@ export class ConfidencesComponent implements OnInit {
     }
   }
 
+  public get hasConfidences(): boolean {
+    return this.confidences.length > 0;
+  }
+
 }
