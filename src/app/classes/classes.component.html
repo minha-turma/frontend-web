@@ -39,11 +39,11 @@
 
       <div class="col-md-3 col-sm-6 col-xs-12">
         <div class="info-box">
-          <span class="info-box-icon bg-green"><i class="fa fa-check"></i></span>
+          <span class="info-box-icon bg-{{ getColor(presenceAvg) }}"><i class="fa fa-check"></i></span>
 
           <div class="info-box-content">
             <span class="info-box-text">Média de Presença</span>
-            <span class="info-box-number">{{presenceAvg}}<small>%</small></span>
+            <span class="info-box-number">{{presenceAvg.toFixed(2)}}<small>%</small></span>
           </div>
           <!-- /.info-box-content -->
         </div>

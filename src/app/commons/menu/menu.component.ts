@@ -44,13 +44,8 @@ export class MenuComponent implements OnInit {
       icon: 'fa fa-cube'
     },
     {
-      name: 'Auto didatismo',
-      path: '/self-learning',
-      icon: 'fa fa-rocket'
-    },
-    {
       name: 'Auto confiança',
-      path: '/auto-trust',
+      path: '/confidences',
       icon: 'fa fa-thumbs-up'
     }];
 

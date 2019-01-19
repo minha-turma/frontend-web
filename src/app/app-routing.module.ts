@@ -9,6 +9,7 @@ import { LoginComponent } from './login/login.component';
 import { SubjectsComponent } from './subjects/subjects.component';
 import { LecturesComponent } from './lectures/lectures.component';
 import { MessagesComponent } from './messages/messages.component';
+import { ConfidencesComponent } from './confidences/confidences.component';
 
 const routes: Routes = [
   {
@@ -34,6 +35,10 @@ const routes: Routes = [
   {
     path: 'messages',
     component: MessagesComponent
+  },
+  {
+    path: 'confidences',
+    component: ConfidencesComponent
   },
   {
     path: 'quizzes/create',

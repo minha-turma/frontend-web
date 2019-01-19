@@ -20,6 +20,7 @@ import { LoginComponent } from './login/login.component';
 import { LecturesComponent } from './lectures/lectures.component';
 import { SubjectsComponent } from './subjects/subjects.component';
 import { MessagesComponent } from './messages/messages.component';
+import { ConfidencesComponent } from './confidences/confidences.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import { MessagesComponent } from './messages/messages.component';
     LoginComponent,
     LecturesComponent,
     SubjectsComponent,
-    MessagesComponent
+    MessagesComponent,
+    ConfidencesComponent
   ],
   imports: [
     BrowserModule,
