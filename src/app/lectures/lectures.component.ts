@@ -5,6 +5,8 @@ import { SchoolClass } from '../classes/school-class';
 import { Subject } from '../subjects/subject';
 import { SubjectService } from '../subjects/subject.service';
 import { SchoolClassService } from '../classes/schoolClass.service';
+import { PresenceService } from '../presences/presence.service';
+import { Presence } from '../presences/presence';
 
 @Component({
   selector: 'app-lectures',
@@ -16,6 +18,7 @@ export class LecturesComponent implements OnInit {
   lectures: Lecture[] = [];
   subjects: Subject[] = [];
   schoolClasses: SchoolClass[] = [];
+  presences: Presence[] = [];
 
   newLecture: Lecture;
   subject: Subject;
@@ -48,8 +51,27 @@ export class LecturesComponent implements OnInit {
     });
   }
 
+  toggle(lecture: Lecture) {
+    lecture.isOpen = !lecture.isOpen;
+    this.lectureService.update(lecture).subscribe(() => {
+      this.lectureService.list().subscribe(lectures => {
+        this.lectures = lectures;
+      });
+    });
+  }
+
+  loadPresences(lecture: Lecture) {
+    this.lectureService.listPresences(lecture).subscribe(presences => {
+      this.presences = presences;
+    });
+  }
+
   public get hasLectures(): Boolean {
     return this.lectures.length > 0;
+  }
+
+  public get hasPresences(): Boolean {
+    return this.presences.length > 0;
   }
 
 }

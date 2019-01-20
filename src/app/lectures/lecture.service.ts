@@ -4,6 +4,7 @@ import { Lecture } from './lecture';
 import { HttpClient } from '@angular/common/http';
 import { map } from 'rxjs/operators';
 import { Observable } from 'rxjs';
+import { Presence } from '../presences/presence';
 
 @Injectable({
   providedIn: 'root'
@@ -25,6 +26,11 @@ export class LectureService extends BaseService<Lecture> {
   list(): Observable<Lecture[]> {
     return this.listEntity().pipe(
       map(list => list.map(item => new Lecture(item))));
+  }
+
+  listPresences(lecture: Lecture): Observable<Presence[]> {
+    return this.http.get<Presence[]>(this.RESOURCE_ID_URL(this.resource, String(lecture.id)) + '/presence').pipe(
+      map(list => list.map(item => new Presence(item))));
   }
 
   add(lecture: Lecture): Observable<Lecture> {

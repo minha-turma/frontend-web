@@ -6,7 +6,7 @@
     <section class="content">
   
       <div class="row">
-        <div class="col-md-6">
+        <div class="col-md-12">
   
           <div class="box">
   
@@ -24,12 +24,24 @@
                         <th>Data</th>
                         <th>Turma</th>
                         <th>Disciplina</th>
+                        <th>Em adamento</th>
                       </tr>
                       <tr *ngFor="let lecture of lectures; index as i">
                         <td>{{i + 1}}</td>
-                        <td><a href="#">{{ lecture.date | date}}</a></td>
+                        <td><a href="#" data-toggle="modal" data-target="#modal-presences" (click)="loadPresences(lecture)">{{ lecture.date | date}}</a></td>
                         <td><a href="#">{{lecture.schoolClass.name}}</a></td>
                         <td><span>{{lecture.subject.name}}</span></td>
+                        <td>
+                          <div *ngIf="lecture.isOpen">
+                              <a (click)="toggle(lecture)"><span class="badge bg-green">Sim</span></a>
+                              <span class="small text-green">(Clique para encerrar aula)</span>
+                              
+                          </div>
+                          <div *ngIf="!lecture.isOpen" >
+                              <a (click)="toggle(lecture)"><span class="badge bg-blue">Não</span></a>
+                              <span class="small text-green">(Clique para abrir chamada)</span>
+                          </div>
+                        </td>
                       </tr>
                     </tbody>
                   </table>
@@ -86,3 +98,32 @@
       </div>
       <!-- /.modal-dialog -->
     </div>
+
+    <div class="modal fade" id="modal-presences">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">×</span></button>
+              <h4 class="modal-title">Presenças</h4>
+            </div>
+            <div class="modal-body form-group">
+                <table class="table table-bordered" *ngIf="hasPresences">
+                    <tbody>
+                      <tr>
+                        <th width="10%">#</th>
+                        <th>Aluno</th>
+                      </tr>
+                      <tr *ngFor="let presence of presences; index as i">
+                        <td>{{i + 1}}</td>
+                        <td><span>{{presence.student.name}}</span></td>
+                      </tr>
+                    </tbody>
+                  </table>
+                  <p *ngIf="!hasPresences">Nenhum aluno presente</p>
+            </div>
+          </div>
+          <!-- /.modal-content -->
+        </div>
+        <!-- /.modal-dialog -->
+      </div>

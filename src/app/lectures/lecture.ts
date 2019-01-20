@@ -9,12 +9,14 @@ export class Lecture extends Entity {
     date: Date;
     subject: Subject;
     schoolClass: SchoolClass;
+    isOpen: boolean;
 
     constructor(data?) {
         super(data);
         this.date = data ? data.date : undefined;
         this.subject = data ? data.subject : undefined;
         this.schoolClass = data ? data.schoolClass : undefined;
+        this.isOpen = data ? data.isOpen : false;
     }
 
     validate(): boolean {
