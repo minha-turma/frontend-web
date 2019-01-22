@@ -26,7 +26,7 @@
                     </tr>
                     <tr *ngFor="let quizz of quizzes; index as i">
                       <td>{{i + 1}}</td>
-                      <td><a href="quizzes/{{quizz.id}}">{{quizz.statement}}</a></td>
+                      <td><a (click)="navigateToQuiz(quizz)">{{quizz.statement}}</a></td>
                       <td>0</td>
                     </tr>
                   </tbody>
@@ -36,7 +36,7 @@
 
             <div class="row">
               <div class="col-md-12">
-                <a class="btn btn-success pull-right" href="/quizzes/create">Novo Quizz</a>
+                <a class="btn btn-success pull-right" (click)="navigateToCreateQuiz()">Novo Quizz</a>
               </div>
             </div>
 
