@@ -55,6 +55,54 @@
                                                 placeholder="Digite o texto da alternativa E">
                                                                 </textarea>
                                         </div>
+
+                                        <div class="col-md-6">
+                                                <p>Alternativa Correta:</p>
+                                                <div class="row">
+                                                  <div class="col-md-2 alternatives-container">
+                                                    <!-- radio button alternativa A-->
+                                                    <span class="custom-control custom-radio custom-control-inline">
+                                                      <input type="radio" class="custom-control-input" id="alternativaA" name="radioButtonInLine" value="A"
+                                                        [(ngModel)]="quizz.correct">
+                                                      <label class="custom-control-label" for="alternativaA">A</label>
+                                                    </span>
+                                                  </div>
+                                                  <div class="col-md-2 alternatives-container">
+                                                    <!-- radio button alternativa B-->
+                                                    <span class="custom-control custom-radio custom-control-inline">
+                                                      <input type="radio" class="custom-control-input" id="alternativaB" name="radioButtonInLine" value="B"
+                                                        [(ngModel)]="quizz.correct">
+                                                      <label class="custom-control-label" for="alternativaB">B</label>
+                                                    </span>
+                                                  </div>
+                                                  <div class="col-md-2 alternatives-container">
+                                                    <!-- radio button alternativa C-->
+                                                    <span class="custom-control custom-radio custom-control-inline">
+                                                      <input type="radio" class="custom-control-input" id="alternativaC" name="radioButtonInLine" value="C"
+                                                        [(ngModel)]="quizz.correct">
+                                                      <label class="custom-control-label" for="alternativaC">C</label>
+                                                    </span>
+                                
+                                                  </div>
+                                                  <div class="col-md-2 alternatives-container">
+                                                    <!-- radio button alternativa D-->
+                                                    <span class="custom-control custom-radio custom-control-inline">
+                                                      <input type="radio" class="custom-control-input" id="alternativaD" name="radioButtonInLine" value="D"
+                                                        [(ngModel)]="quizz.correct">
+                                                      <label class="custom-control-label" for="alternativaD">D</label>
+                                                    </span>
+                                                  </div>
+                                                  <div class="col-md-2 alternatives-container">
+                                                    <!-- radio button alternativa E-->
+                                                    <span class="custom-control custom-radio custom-control-inline">
+                                                      <input type="radio" class="custom-control-input" id="alternativaE" name="radioButtonInLine" value="E"
+                                                        [(ngModel)]="quizz.correct">
+                                                      <label class="custom-control-label" for="alternativaE">E</label>
+                                                    </span>
+                                                  </div>
+                                                </div>
+                                
+                                              </div>
                                     </div>
 
                                     <div class="row">
