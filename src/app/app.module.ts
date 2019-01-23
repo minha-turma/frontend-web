@@ -21,6 +21,7 @@ import { LecturesComponent } from './lectures/lectures.component';
 import { SubjectsComponent } from './subjects/subjects.component';
 import { MessagesComponent } from './messages/messages.component';
 import { ConfidencesComponent } from './confidences/confidences.component';
+import { LoadingBarHttpClientModule } from '@ngx-loading-bar/http-client';
 
 @NgModule({
   declarations: [
@@ -45,7 +46,8 @@ import { ConfidencesComponent } from './confidences/confidences.component';
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    Interceptor
+    Interceptor,
+    LoadingBarHttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
