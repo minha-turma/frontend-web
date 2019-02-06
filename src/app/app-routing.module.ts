@@ -10,6 +10,8 @@ import { SubjectsComponent } from './subjects/subjects.component';
 import { LecturesComponent } from './lectures/lectures.component';
 import { MessagesComponent } from './messages/messages.component';
 import { ConfidencesComponent } from './confidences/confidences.component';
+import { PresenceReportComponent } from './presence-report/presence-report.component';
+import { ReportMenuComponent } from './report-menu/report-menu.component';
 
 const routes: Routes = [
   {
@@ -47,6 +49,14 @@ const routes: Routes = [
   {
     path: 'quizzes/:id',
     component: ViewQuizzComponent
+  },
+  {
+    path: 'reports/presence',
+    component: PresenceReportComponent
+  }, 
+  {
+    path: 'reports',
+    component: ReportMenuComponent
   },
   {
     path: '',

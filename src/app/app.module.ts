@@ -22,6 +22,10 @@ import { SubjectsComponent } from './subjects/subjects.component';
 import { MessagesComponent } from './messages/messages.component';
 import { ConfidencesComponent } from './confidences/confidences.component';
 import { LoadingBarHttpClientModule } from '@ngx-loading-bar/http-client';
+import { PresenceReportComponent } from './presence-report/presence-report.component';
+import { ReportMenuComponent } from './report-menu/report-menu.component';
+
+import { ChartsModule } from 'ng2-charts';
 
 @NgModule({
   declarations: [
@@ -39,7 +43,9 @@ import { LoadingBarHttpClientModule } from '@ngx-loading-bar/http-client';
     LecturesComponent,
     SubjectsComponent,
     MessagesComponent,
-    ConfidencesComponent
+    ConfidencesComponent,
+    PresenceReportComponent,
+    ReportMenuComponent
   ],
   imports: [
     BrowserModule,
@@ -47,7 +53,8 @@ import { LoadingBarHttpClientModule } from '@ngx-loading-bar/http-client';
     HttpClientModule,
     FormsModule,
     Interceptor,
-    LoadingBarHttpClientModule
+    LoadingBarHttpClientModule,
+    ChartsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
