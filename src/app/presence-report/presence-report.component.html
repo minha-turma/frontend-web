@@ -5,7 +5,7 @@
       <div class="col-md-6 " style="margin-left: 30%;">
   
         <div style="display: block">
-            <canvas baseChart width="300" height="300"
+            <canvas baseChart width="300" height="250"
                         [datasets]="lineChartData"
                         [labels]="lineChartLabels"
                         [options]="lineChartOptions"
@@ -14,7 +14,6 @@
                         [chartType]="lineChartType"
                         (chartHover)="chartHovered($event)"
                         (chartClick)="chartClicked($event)">
-                
             </canvas>
         </div>
     

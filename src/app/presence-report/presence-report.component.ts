@@ -6,7 +6,7 @@ import { Component } from '@angular/core';
   templateUrl: './presence-report.component.html',
   styleUrls: ['./presence-report.component.scss']
 })
-export class PresenceReportComponent implements OnInit {
+export class PresenceReportComponent {
 
   constructor() { }
 
