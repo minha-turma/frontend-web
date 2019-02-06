@@ -47,6 +47,11 @@ export class MenuComponent implements OnInit {
       name: 'Auto confiança',
       path: '/confidences',
       icon: 'fa fa-thumbs-up'
+    },
+    {
+      name: 'Relatórios',
+      path: '/reports',
+      icon: 'fa fa-bar-chart'
     }];
 
   selected: MenuItem = {
