@@ -1,0 +1,13 @@
+<div class="content">   
+    <div class="row">
+      <div class="col-md-6 " style="margin-left: 30%;">
+  
+        <div style="display: block">
+            <canvas baseChart width="300" height="250"
+          [data]="pieChartData"
+          [labels]="pieChartLabels"
+          [chartType]="pieChartType"
+          (chartHover)="chartHovered($event)"
+          (chartClick)="chartClicked($event)">
+  </canvas>
+        </div>

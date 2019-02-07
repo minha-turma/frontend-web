@@ -12,6 +12,7 @@ import { MessagesComponent } from './messages/messages.component';
 import { ConfidencesComponent } from './confidences/confidences.component';
 import { PresenceReportComponent } from './presence-report/presence-report.component';
 import { ReportMenuComponent } from './report-menu/report-menu.component';
+import { FeelingReportComponent } from './feeling-report/feeling-report.component';
 
 const routes: Routes = [
   {
@@ -53,7 +54,11 @@ const routes: Routes = [
   {
     path: 'reports/presence',
     component: PresenceReportComponent
-  }, 
+  },
+  {
+    path: 'reports/feeling',
+    component: FeelingReportComponent
+  },
   {
     path: 'reports',
     component: ReportMenuComponent

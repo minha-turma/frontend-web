@@ -26,6 +26,7 @@ import { PresenceReportComponent } from './presence-report/presence-report.compo
 import { ReportMenuComponent } from './report-menu/report-menu.component';
 
 import { ChartsModule } from 'ng2-charts';
+import { FeelingReportComponent } from './feeling-report/feeling-report.component';
 
 @NgModule({
   declarations: [
@@ -45,7 +46,8 @@ import { ChartsModule } from 'ng2-charts';
     MessagesComponent,
     ConfidencesComponent,
     PresenceReportComponent,
-    ReportMenuComponent
+    ReportMenuComponent,
+    FeelingReportComponent
   ],
   imports: [
     BrowserModule,
