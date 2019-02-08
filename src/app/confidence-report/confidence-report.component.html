@@ -1,3 +1,19 @@
-<p>
-  confidence-report works!
-</p>
+<div class="content">
+    <div class="row">
+        <div class="col-md-6" style="margin-left: 30%;">
+            <div style="display: block">
+                <canvas baseChart width="300" height="200"
+                    [datasets]="barChartData"
+                    [labels]="barChartLabels"
+                    [options]="barChartOptions"
+                    [legend]="barChartLegend"
+                    [chartType]="barChartType"
+                    (chartHover)="chartHovered($event)"
+                    (chartClick)="chartClicked($event)">
+                    
+                </canvas>
+  </div>
+        </div>
+    </div>
+  
+</div>

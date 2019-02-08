@@ -13,6 +13,7 @@ import { ConfidencesComponent } from './confidences/confidences.component';
 import { PresenceReportComponent } from './presence-report/presence-report.component';
 import { ReportMenuComponent } from './report-menu/report-menu.component';
 import { FeelingReportComponent } from './feeling-report/feeling-report.component';
+import { ConfidenceReportComponent } from './confidence-report/confidence-report.component';
 
 const routes: Routes = [
   {
@@ -58,6 +59,10 @@ const routes: Routes = [
   {
     path: 'reports/feeling',
     component: FeelingReportComponent
+  },
+  {
+    path: 'reports/confidence',
+    component: ConfidenceReportComponent
   },
   {
     path: 'reports',
