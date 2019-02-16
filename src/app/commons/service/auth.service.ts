@@ -4,8 +4,8 @@ import { Observable } from 'rxjs';
 import { tap, map } from 'rxjs/operators';
 import { Router } from '@angular/router';
 
-const API_URL = 'http://localhost:8080/api';
-//const API_URL = '/api';
+//const API_URL = 'http://localhost:8080/api';
+const API_URL = '/api';
 
 function RESOURCE_URL(resource: string) {
     return `${API_URL}/${resource}`;

@@ -3,8 +3,8 @@ import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Entity } from '../model/Entity';
 
-const API_URL = 'http://localhost:8080/api';
-//const API_URL = '/api';
+//const API_URL = 'http://localhost:8080/api';
+const API_URL = '/api';
 
 @Injectable({
   providedIn: 'root'
