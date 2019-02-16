@@ -78,30 +78,35 @@
               <span aria-hidden="true">×</span></button>
             <h4 class="modal-title">Adicionar Nova Aula</h4>
           </div>
-          <div class="modal-body form-group">
-            <label>Data da aula</label>
-            <input type="date" class="form-control" [(ngModel)]="date">
-
-            <label>Turma</label>
-            <select class="form-control" [(ngModel)]="schoolClass">
-                <option *ngFor="let schoolClass of schoolClasses" [ngValue]="schoolClass"> {{ schoolClass.name }}</option>
-            </select>
-
-            <label>Disciplina</label>
-            <select class="form-control" [(ngModel)]="subject">
-                <option *ngFor="let subject of subjects" [ngValue]="subject"> {{ subject.name }}</option>
-              </select>
-
-              <label>Tópico</label>
-              <div *ngFor="let subject of subjects">
-                <select class="form-control" [(ngModel)]="topic">
-                  <option *ngFor="let topic of subject.topics" [value]="topic"> {{topic}} </option>
+        
+            <div class="modal-body form-group">
+                <label>Data da aula</label>
+                <input type="date" class="form-control" [(ngModel)]="date">
+    
+                <label>Turma</label>
+                <select class="form-control" [(ngModel)]="schoolClass">
+                    <option *ngFor="let schoolClass of schoolClasses" [ngValue]="schoolClass"> {{ schoolClass.name }}</option>
                 </select>
-              </div>
-              
-              
+    
+                <label>Disciplina</label>
+                <select class="form-control" [(ngModel)]="subject">
+                    <option *ngFor="let subject of subjects" [ngValue]="subject"> {{ subject.name }}</option>
+                  </select>
+    
+                  <label>Tópico</label>
+    
+                  <div *ngIf="subject?.name == 'Biologia'; else elseBlock">
+                    <select class="form-control" [(ngModel)]="topic">
+                        <option *ngFor="let topic of subject.topics" [ngValue]="topic"> {{ topic }}</option>
+                    </select>
+                  </div>
+                
+                  <ng-template #elseBlock>
+                    <input type="text" class="form-control" [(ngModel)]="topic">   
+                 </ng-template>
            
           </div>
+          
           <div class="modal-footer">
             <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Cancelar</button>
             <button type="button" (click)="addLecture()" data-dismiss="modal" class="btn btn-primary">Adicionar</button>
