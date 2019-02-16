@@ -23,12 +23,16 @@
                       <th style="width: 10px">#</th>
                       <th>Enunciado</th>
                       <th>Respostas</th>
+                   <!--   <th>Disciplina</th> -->
+                      <th>Tópico</th>
                       <th>Status</th>
                     </tr>
                     <tr *ngFor="let quizz of quizzes; index as i">
                       <td>{{i + 1}}</td>
                       <td><a (click)="navigateToQuiz(quizz)">{{quizz.statement}}</a></td>
                       <td>0</td>
+                  <!--    <td>{{quizz.subject.name}}</td> -->
+                      <td>{{quizz.topic}}</td>
                       <td>
                           <div *ngIf="quizz.isOpen">
                               <a (click)="toggle(quizz)"><span class="badge bg-green">Aberto</span></a>

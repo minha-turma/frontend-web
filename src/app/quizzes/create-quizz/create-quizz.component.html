@@ -13,6 +13,19 @@
           <div class="box-body">
 
             <div class="row form-group">
+
+              <label>Disciplina</label>
+            <select class="form-control" [(ngModel)]="subject">
+                <option *ngFor="let subject of subjects" [ngValue]="subject"> {{ subject.name }}</option>
+              </select>
+
+              <label>Tópico</label>
+              <div *ngFor="let subject of subjects">
+                <select class="form-control" [(ngModel)]="topic">
+                  <option *ngFor="let topic of subject.topics" [value]="topic"> {{topic}} </option>
+                </select>
+              </div>
+
               <div class="col-md-12 statement">
                 <p>Enunciado</p>
                 <textarea class="form-control" rows=3 placeholder="Digite o enunciado da questão" [(ngModel)]="statement"></textarea>
