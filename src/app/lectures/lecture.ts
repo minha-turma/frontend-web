@@ -8,6 +8,7 @@ export class Lecture extends Entity {
     id: number;
     date: Date;
     subject: Subject;
+    topic: string;
     schoolClass: SchoolClass;
     isOpen: boolean;
 
@@ -17,6 +18,7 @@ export class Lecture extends Entity {
         this.subject = data ? data.subject : undefined;
         this.schoolClass = data ? data.schoolClass : undefined;
         this.isOpen = data ? data.isOpen : false;
+        this.topic = data ? data.topic : undefined;
     }
 
     validate(): boolean {
