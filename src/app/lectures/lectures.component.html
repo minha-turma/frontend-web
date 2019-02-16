@@ -24,6 +24,7 @@
                         <th>Data</th>
                         <th>Turma</th>
                         <th>Disciplina</th>
+                        <th>Tópico</th>
                         <th>Em adamento</th>
                       </tr>
                       <tr *ngFor="let lecture of lectures; index as i">
@@ -31,6 +32,8 @@
                         <td><a href="#" data-toggle="modal" data-target="#modal-presences" (click)="loadPresences(lecture)">{{ lecture.date | date}}</a></td>
                         <td><a href="#">{{lecture.schoolClass.name}}</a></td>
                         <td><span>{{lecture.subject.name}}</span></td>
+                        <td><span>{{lecture.topic}}</span></td>
+                        
                         <td>
                           <div *ngIf="lecture.isOpen">
                               <a (click)="toggle(lecture)"><span class="badge bg-green">Sim</span></a>
@@ -88,6 +91,16 @@
             <select class="form-control" [(ngModel)]="subject">
                 <option *ngFor="let subject of subjects" [ngValue]="subject"> {{ subject.name }}</option>
               </select>
+
+              <label>Tópico</label>
+              <div *ngFor="let subject of subjects">
+                <select class="form-control" [(ngModel)]="topic">
+                  <option *ngFor="let topic of subject.topics" [value]="topic"> {{topic}} </option>
+                </select>
+              </div>
+              
+              
+           
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Cancelar</button>
