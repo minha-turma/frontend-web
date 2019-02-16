@@ -29,7 +29,6 @@ import { ChartsModule } from 'ng2-charts';
 import { FeelingReportComponent } from './feeling-report/feeling-report.component';
 import { ConfidenceReportComponent } from './confidence-report/confidence-report.component';
 
-import 'chart.js';
 
 @NgModule({
   declarations: [
