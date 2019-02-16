@@ -19,11 +19,13 @@ export class LecturesComponent implements OnInit {
   subjects: Subject[] = [];
   schoolClasses: SchoolClass[] = [];
   presences: Presence[] = [];
+  topics: string[] = [];
 
   newLecture: Lecture;
   subject: Subject;
   schoolClass: SchoolClass;
   date: Date;
+  topic: string;
 
   constructor(public lectureService: LectureService,
               public subjectService: SubjectService,
@@ -45,7 +47,7 @@ export class LecturesComponent implements OnInit {
   addLecture() {
     const doo = new Date(this.date);
     this.lectureService.add(new Lecture({
-      date: new Date( doo.getTime() - doo.getTimezoneOffset() * -60000 ), subject: this.subject, schoolClass: this.schoolClass
+      date: new Date( doo.getTime() - doo.getTimezoneOffset() * -60000 ), subject: this.subject, topic: this.topic, schoolClass: this.schoolClass
      })).subscribe(lecture => {
       this.lectures.push(lecture);
     });
