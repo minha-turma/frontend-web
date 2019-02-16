@@ -13,6 +13,7 @@ export class CreateQuizzComponent implements OnInit {
   statement: String;
   alternatives: String[] = [];
   correct: number;
+  isOpen: boolean;
 
   constructor(public quizzService: QuizzService,
               public router: Router) { }
@@ -24,7 +25,7 @@ export class CreateQuizzComponent implements OnInit {
   }
 
   saveQuizz() {
-    const quizz = new Quizz({ statement: this.statement, alternatives: this.alternatives, correct: this.correct});
+    const quizz = new Quizz({ statement: this.statement, alternatives: this.alternatives, correct: this.correct, isOpen: this.isOpen});
     this.quizzService.add(quizz).subscribe(addedQuizz => {
       this.router.navigate(['/quizzes']);
     });

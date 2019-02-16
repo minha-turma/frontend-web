@@ -7,12 +7,15 @@ export class Quizz extends Entity {
     statement: String;
     alternatives: String[];
     correct: number;
+    isOpen: boolean;
 
     constructor(data?) {
         super(data);
         this.statement = getStringProperty('statement', data);
         this.alternatives = data['alternatives'];
         this.correct = data.correct;
+        this.isOpen = data ? data.isOpen : false;
+
     }
 
     validate(): boolean {

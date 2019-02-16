@@ -21,6 +21,15 @@ export class QuizzesComponent implements OnInit {
     });
   }
 
+  toggle(quizz: Quizz) {
+    quizz.isOpen = !quizz.isOpen;
+    this.quizzService.update(quizz).subscribe(() => {
+      this.quizzService.list().subscribe(quizzes => {
+        this.quizzes = quizzes;
+      });
+    });
+  }
+
   navigateToQuiz(quizz: Quizz) {
     this.router.navigate(['quizzes', quizz.id]);
   }
