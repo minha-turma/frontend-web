@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 
-
 @Component({
   selector: 'app-presence-report',
   templateUrl: './presence-report.component.html',

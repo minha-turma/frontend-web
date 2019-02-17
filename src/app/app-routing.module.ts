@@ -53,15 +53,15 @@ const routes: Routes = [
     component: ViewQuizzComponent
   },
   {
-    path: 'reports/presence',
+    path: 'presence',
     component: PresenceReportComponent
   },
   {
-    path: 'reports/feeling',
+    path: 'feeling',
     component: FeelingReportComponent
   },
   {
-    path: 'reports/confidence',
+    path: 'confidence',
     component: ConfidenceReportComponent
   },
   {
