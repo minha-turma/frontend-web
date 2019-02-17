@@ -4,7 +4,7 @@ import { Observable } from 'rxjs';
 import { Entity } from '../model/Entity';
 
 //const API_URL = 'http://localhost:8080/api';
-const API_URL = 'http://minhaturma.herokuapp.com/api';
+const API_URL = '/api';
 
 @Injectable({
   providedIn: 'root'
