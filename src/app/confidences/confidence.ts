@@ -9,12 +9,14 @@ export class Confidence extends Entity {
     status: String;
     subject: Subject;
     student: User;
+    topic: String;
 
     constructor(data?) {
         super(data);
         this.status = data ? data.status : undefined;
         this.subject = data ? data.subject : undefined;
         this.student = data ? data.student : undefined;
+        this.topic = data ? data.topic : undefined;
     }
 
     validate(): boolean {
