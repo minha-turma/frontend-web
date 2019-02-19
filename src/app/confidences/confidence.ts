@@ -20,6 +20,6 @@ export class Confidence extends Entity {
     }
 
     validate(): boolean {
-        return this.status !== undefined && this.subject !== undefined && this.student !== undefined;
+        return this.status !== undefined && this.subject !== undefined && this.student !== undefined && this.topic !== undefined;
     }
 }

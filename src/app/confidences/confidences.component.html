@@ -25,8 +25,8 @@
                         </tr>
                         <tr *ngFor="let confidence of getConfidences(subject); index as i">
                           <td>{{i + 1}}</td>
-                          <td>{{confidence.topic}}</td>
                           <td><a href="student/{{confidence.student.id}}">{{confidence.student.name}}</a></td>
+                          <td>{{confidence.topic}}</td>
                           <td style="width: 15%">
                               <img src="assets/{{ getConfidenceImage(confidence) }}" width="30px">
                             </td>
